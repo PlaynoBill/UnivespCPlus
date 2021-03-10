@@ -35,8 +35,8 @@ void fila::push(tipo_item item) {
 
 tipo_item fila::pop(){
     if(!isVazio()){
-        estrutura_fila[(primeiro-1) % maxfila];
         primeiro++;
+        return estrutura_fila[(primeiro-1) % maxfila];
     }else{
         throw "A fila está vazia";
     }
