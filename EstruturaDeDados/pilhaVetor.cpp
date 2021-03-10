@@ -15,6 +15,7 @@ pilha::~pilha(){
     delete [] estrutura;
 }
 
+
 //defini boleano devido a definição do .h
 bool pilha::isVazio() const{
  return (length == 0 );   
@@ -25,8 +26,9 @@ bool pilha::isCheio() const{
 }
 
 // é obrigatório colocar o parametro que vem do .h no caso foi o tipo item
-void pilha::push(tipoItem){
+void pilha::push(tipoItem item){
     if(!isCheio()){
+        estrutura[length] = item;
         length++;
     }else{
         throw "Pilha está cheia";
@@ -43,3 +45,11 @@ tipoItem pilha::pop(){
             throw "Pilha está Vazia";
         }
     };
+
+
+    void pilha::print() const{
+        cout << "Está na pilha: " << endl;
+        for ( int i = 0; i < length; i++ ){
+            cout << estrutura[i] << endl;
+        }
+    }
